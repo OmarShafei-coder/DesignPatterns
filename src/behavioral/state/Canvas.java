@@ -1,25 +1,19 @@
 package behavioral.state;
 
 public class Canvas {
-    private ToolType toolType;
+    private Tool currentTool;
 
-    public void setToolType(ToolType toolType) {
-        this.toolType = toolType;
+    public Canvas(Tool currentTool) {
+        this.currentTool = currentTool;
     }
 
     public void draw()
     {
-        switch (toolType){
-            case Circle -> System.out.println("Draw Circle");
-            case Rectangular -> System.out.println("Draw rectangular");
-        }
+        currentTool.draw();
     }
 
     public void erase()
     {
-        switch (toolType){
-            case Circle -> System.out.println("Erase Circle");
-            case Rectangular -> System.out.println("Erase rectangular");
-        }
+        currentTool.erase();
     }
 }
